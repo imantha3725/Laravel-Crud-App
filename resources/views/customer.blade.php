@@ -22,20 +22,10 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="dropdown">
-                                <button class="btn btn-light dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Sort by: <span class="fw-bold">Newest</span>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-                                    <li><a class="dropdown-item" href="#">Newest</a></li>
-                                    <li><a class="dropdown-item" href="#">Oldest</a></li>
-                                    <li><a class="dropdown-item" href="#">Name (A-Z)</a></li>
-                                    <li><a class="dropdown-item" href="#">Name (Z-A)</a></li>
-                                </ul>
-                            </div>
-                            <button class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#addCustomerModal">
+
+                            <a href="{{ url('/customers/new') }}"><button class="btn btn-primary ms-2" data-bs-toggle="modal" >
                                 <i class="fas fa-plus"></i> Add Customer
-                            </button>
+                            </button></a>
                         </div>
                     </div>
 
@@ -47,25 +37,29 @@
                                     <th>Company</th>
                                     <th>Phone Number</th>
                                     <th>Email</th>
-                                    <th>Country</th>
-                                    <th>Status</th>
+                                    
+                                    
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($customer as $customer )
+                                
+                                
                                 <tr>
-                                    <td>Jane Cooper</td>
-                                    <td>Microsoft</td>
-                                    <td>(225) 555-0118</td>
-                                    <td>jane@microsoft.com</td>
-                                    <td>United States</td>
-                                    <td><span class="badge bg-success">Active</span></td>
+                                    <td>{{ $customer->name }}</td>
+                                    <td>{{ $customer->company }}</td>
+                                    <td>{{ $customer->phone_number }}</td>
+                                    <td>{{ $customer->email }}</td>
+                                    
+
                                     <td>
                                         <button class="btn btn-sm btn-info btn-action" ><i class="fas fa-edit"></i></button>
                                         <button class="btn btn-sm btn-danger btn-action" ><i class="fas fa-trash"></i></button>
                                         <button class="btn btn-sm btn-warning btn-action"><i class="fas fa-sync"></i></button>
                                     </td>
                                 </tr>
+                                @endforeach
 
 
 
