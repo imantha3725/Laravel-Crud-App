@@ -1,0 +1,241 @@
+:root {
+    --sidebar-bg: #ffffff;
+    --primary-color: #6366F1;
+    --light-bg: #f8f9fa;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fb;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: var(--sidebar-bg);
+    height: 100vh;
+    position: fixed;
+    box-shadow: var(--box-shadow);
+    z-index: 100;
+}
+
+.sidebar .nav-link {
+    color: #555;
+    border-radius: 0;
+    padding: 0.8rem 1.5rem;
+    margin: 0.2rem 0;
+}
+
+.sidebar .nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.sidebar .nav-link:hover:not(.active) {
+    background-color: #f0f0f0;
+}
+
+.sidebar .nav-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 80px;
+    padding: 20px;
+}
+
+@media (min-width: 992px) {
+    .main-content {
+        margin-left: 250px;
+    }
+}
+
+/* Card Styles */
+.stat-card {
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card .icon-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Table Styles */
+.table-container {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    border-bottom: none;
+    color: #555;
+    font-weight: 600;
+}
+
+.table tbody tr {
+    transition: background-color 0.2s;
+}
+
+.table tbody tr:hover {
+    background-color: #f5f7fb;
+}
+
+/* Action Buttons */
+.btn-action {
+    padding: 0.3rem 0.6rem;
+    margin-right: 0.3rem;
+}
+
+/* User Avatar */
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Pagination Styles */
+.pagination .page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.pagination .page-link {
+    color: var(--primary-color);
+}
+
+/* Make sidebar collapsible */
+@media (max-width: 991.98px) {
+    .sidebar {
+        width: 80px;
+    }
+
+    .sidebar .nav-text,
+    .sidebar .menu-title {
+        display: none;
+    }
+
+    .sidebar .nav-icon {
+        margin-right: 0;
+    }
+}
+
+.search-container {
+    max-width: 300px;
+}
+
+/* Modal styles */
+.modal-header {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.product-grid {
+    padding: 20px;
+}
+.product-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    height: 100%;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+}
+.product-icon {
+    background-color: rgba(25, 135, 84, 0.1);
+    border-radius: 50%;
+    padding: 15px;
+    display: inline-flex;
+    margin-bottom: 10px;
+}
+.product-icon i {
+    font-size: 24px;
+    color: #198754;
+}
+.product-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    background-color: rgba(25, 135, 84, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-image img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+.action-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+.action-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+.edit-btn {
+    background-color: #0dcaf0;
+}
+.delete-btn {
+    background-color: #dc3545;
+}
+.refresh-btn {
+    background-color: #ffc107;
+}
+.product-count {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+@media (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 576px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
