@@ -37,25 +37,25 @@
                                     <th>Company</th>
                                     <th>Phone Number</th>
                                     <th>Email</th>
-                                    
-                                    
+
+
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($customer as $customer )
-                                
-                                
+
+
                                 <tr>
                                     <td>{{ $customer->name }}</td>
                                     <td>{{ $customer->company }}</td>
                                     <td>{{ $customer->phone_number }}</td>
                                     <td>{{ $customer->email }}</td>
-                                    
+
 
                                     <td>
-                                        <button class="btn btn-sm btn-info btn-action" ><i class="fas fa-edit"></i></button>
-                                        <button class="btn btn-sm btn-danger btn-action" ><i class="fas fa-trash"></i></button>
+                                        <a href="{{ url('/customers/edit/'.$customer->id) }}"><button class="btn btn-sm btn-info btn-action" ><i class="fas fa-edit"></i></button></a>
+                                        <a href="{{ url('customers/delete'.$customer->id) }}"><button class="btn btn-sm btn-danger btn-action" ><i class="fas fa-trash"></i></button></a>
                                         <button class="btn btn-sm btn-warning btn-action"><i class="fas fa-sync"></i></button>
                                     </td>
                                 </tr>
