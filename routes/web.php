@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\EmployeeController;
 
 
 Route::get('/', [DashboardController::class, 'dashboard']);
@@ -20,4 +21,11 @@ Route::post('/products/update/{id}',[ProductController::class,'update']);
 Route::get('/products/new',[ProductController::class,'create']);
 Route::get('/products/delete/{id}',[ProductController::class,'delete']);
 Route::get('/customers/delete/{id}',[CustomerController::class,'delete']);
+Route::get('/employees', [EmployeeController::class, 'employee']);
+Route::get('/employees/new',[EmployeeController::class,'create']);
+Route::post('/employees/add',[EmployeeController::class,'store']);
+Route::get('/employees/edit/{id}',[EmployeeController::class,'edit']);
+Route::get('/employees/delete/{id}',[EmployeeController::class,'delete']);
+
+
 

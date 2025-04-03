@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li class="nav-item w-100">
-                <a href="#" class="nav-link d-flex align-items-center">
+                <a href="{{ '/employees' }}" class="nav-link d-flex align-items-center">
                     <div class="nav-icon bg-light rounded">
                         <i class="fas fa-user-tie"></i>
                     </div>
